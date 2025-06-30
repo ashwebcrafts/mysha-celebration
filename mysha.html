@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mysha Maryam's 3rd Month</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#ffe6f0, #fff0f5);
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 3rem;
+      color: #ff4da6;
+      animation: bounce 2s infinite;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #ff3399;
+      margin: 10px 0 20px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #ff3399;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #ff66b2;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #e60073;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 60px;
+      height: 80px;
+      background-color: #ff66b2;
+      border-radius: 50% 50% 50% 50%;
+      animation: floatUp 6s infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        bottom: -100px;
+        transform: translateX(0);
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        transform: translateX(50px);
+        opacity: 0;
+      }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: gold;
+      animation: fall 4s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Happy 3rd Month 🎉</h1>
+  <h2>Princess MYSHA MARYAM 👶💖</h2>
+  <p>You're growing so fast and filling our hearts with joy! 🌈🍼💕</p>
+  <button onclick="showMessage()">Click for Surprise!</button>
+
+  <script>
+    // Surprise Message
+    function showMessage() {
+      alert("MYSHA MARYAM, you're our little sunshine! 🌟 Lots of love! 💞");
+    }
+
+    // Generate Balloons
+    for (let i = 0; i < 10; i++) {
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+      balloon.style.left = Math.random() * 100 + "vw";
+      balloon.style.backgroundColor = ["#ff66b2", "#ff9999", "#ffb3e6"][i % 3];
+      balloon.style.animationDelay = i + 's';
+      document.body.appendChild(balloon);
+    }
+
+    // Generate Confetti
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.top = Math.random() * -100 + "px";
+      confetti.style.backgroundColor = ["#fcd303", "#ff66b2", "#33ccff", "#ff9999"][i % 4];
+      confetti.style.animationDelay = Math.random() * 4 + "s";
+      document.body.appendChild(confetti);
+    }
+  </script>
+
+</body>
+</html>
